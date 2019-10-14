@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         LinkedIn Script
+// @name         LinkedIn Jobs Blacklist
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  LinkedIn Jobs Blacklist
