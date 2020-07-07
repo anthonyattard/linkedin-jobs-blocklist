@@ -10,32 +10,32 @@
 // @require      https://git.io/JJt7d
 // ==/UserScript==
 
-(function() {
-  'use strict';
+(function () {
+    'use strict';
 
-  var blacklist = [
-    "Company 1",
-    "Company 2",
-    "Company 3"
-  ];
+    var blacklist = [
+        "Company 1",
+        "Company 2",
+        "Company 3"
+    ];
 
-  blacklist = blacklist.map(function(item) {
-    return item.toLowerCase();
-  });
-  
-  function filter(jNode) {
-   let company = jNode.find('.job-card-container__company-name').text().trim().toLowerCase();
-   if(blacklist.includes( company ) ) {
-      console.log('Hide item from company: ' + company);
-      jNode.closest(".artdeco-list__item").hide();
+    blacklist = blacklist.map(function (item) {
+        return item.toLowerCase();
+    });
+
+    function filter(jNode) {
+        let company = jNode.find('.job-card-container__company-name').text().trim().toLowerCase();
+        if (blacklist.includes(company)) {
+            console.log('Hide item from company: ' + company);
+            jNode.closest(".artdeco-list__item").hide();
+        }
+
+        // Debug Section
+        // console.log('Total items: ' + $('.job-card-container__company-name').length);
+        // console.log('Remaining items: ' + $('.job-card-container__company-name:visible').length);
+        // console.log('Hidden items: ' + $('.job-card-container__company-name:hidden').length);
     }
 
-    // Debug Section
-    // console.log('Total items: ' + $('.job-card-container__company-name').length);
-    // console.log('Remaining items: ' + $('.job-card-container__company-name:visible').length);
-    // console.log('Hidden items: ' + $('.job-card-container__company-name:hidden').length);
-  }
-
-    waitForKeyElements (".job-card-container--clickable", filter);
+    waitForKeyElements(".job-card-container--clickable", filter);
 
 })();
