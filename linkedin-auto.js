@@ -22,16 +22,14 @@
     return item.toLowerCase();
   });
 
-function filter() {
+function filter(jNode) {
  // console.log(blacklist);
-  $('.job-card-container__company-name').each(function( index ) {
-      let theVal = $( this ).text().trim().toLowerCase();
-      // console.log(theVal);
-      if(blacklist.includes( theVal ) ) {
-          console.log('Hide item from company: ' + theVal);
-          $( this ).closest(".artdeco-list__item").hide();
-      }
-  });
+ let company = jNode.find('.job-card-container__company-name').text().trim().toLowerCase();
+ if(blacklist.includes( company ) ) {
+    console.log('Hide item from company: ' + company);
+    jNode.closest(".artdeco-list__item").hide();
+    // jNode.parent.hide();
+  }
 
   console.log('Total items: ' + $('.job-card-container__company-name').length);
   console.log('Remaining items: ' + $('.job-card-container__company-name:visible').length);
