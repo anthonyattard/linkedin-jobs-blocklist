@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         LinkedIn Jobs Blacklist
+// @name         LinkedIn Jobs Blocklist
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @description  LinkedIn Jobs Blacklist
+// @description  LinkedIn Jobs Blocklist
 // @author       Anthony Attard
 // @match        https://www.linkedin.com/jobs/*
 // @grant        none
@@ -13,19 +13,19 @@
 (function () {
     'use strict';
 
-    var blacklist = [
+    var blocklist = [
         "Company 1",
         "Company 2",
         "Company 3"
     ];
 
-    blacklist = blacklist.map(function (item) {
+    blocklist = blocklist.map(function (item) {
         return item.toLowerCase();
     });
 
     function filter(jNode) {
         let company = jNode.find('.job-card-container__company-name').text().trim().toLowerCase();
-        if (blacklist.includes(company)) {
+        if (blocklist.includes(company)) {
             console.log('Hide item from company: ' + company);
             jNode.closest(".artdeco-list__item").hide();
         }

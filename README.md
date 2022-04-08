@@ -1,5 +1,5 @@
-# LinkedIn Jobs Blacklist
-Blacklist companies from showing up on LinkedIn Jobs. 
+# LinkedIn Jobs Blocklist
+Blocklist companies from showing up on LinkedIn Jobs. 
 
 This Chrome userscript filters results on LinkedIn Jobs by removing companies which you do not want to see. This is incredibly useful for blocking recruiting agencies.
 
@@ -12,9 +12,9 @@ For [Firefox](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/)
 
 Then add the script into the extension.
 
-## Adding to the Blacklist
+## Adding to the Blocklist
 
-To add companies to the blacklist modify the entries for the blacklist variable at the top of the script.
+To add companies to the blocklist modify the entries for the blocklist variable at the top of the script.
 
 ## Authors
 
